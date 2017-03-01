@@ -22,6 +22,7 @@ public class TaskTest {
 		task.setDescription("To take 10000 rs from home and deposit at Andhra bank. A/C details XXXX IFSC : XXXXX");
 		task.setStatus("Done");
 		task.setUsers_Id("1");
+		//task.setExpiry('20-09-2017');
 	    taskDAO.saveOrUpdate(task);
 		
 	    

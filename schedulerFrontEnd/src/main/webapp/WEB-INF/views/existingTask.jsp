@@ -36,7 +36,12 @@
 	type='text/css' />
 
 <!-- //lined-icons -->
-<script src="resources/js/jquery-1.10.2.min.js"></script>
+<script src="resources/js/jquery-1.10.2.min.js"></script> 
+
+<link rel="stylesheet" href="resources/css/footable.core.css">
+<link rel="stylesheet" href="resources/css/footable.metro.css">
+<script src="resources/js/footable.js"></script>
+<script src="resources/js/footable.paginate.js"></script>
 </head>
 <body>
 <div class="page-container">
@@ -51,7 +56,7 @@
 							<div class="top_right">
 								<ul>
 
-									<li><a href="contact.html"><span
+									<li><a href="contacts"><span
 											class="glyphicon glyphicon-envelope"> Contacts</span></a></li>|
 									<li><a><span class="glyphicon glyphicon-phone-alt">
 												91-90727-00085</span></a></li>
@@ -75,8 +80,9 @@
 	</div>
 	<!--/sidebar-menu-->
 	<div class="sidebar-menu">
-		<header> <br>
-		<br>
+		<header> 
+		
+		<h3>Scheduler</h3>
 		<br>
 		<br>
 		</header>
@@ -85,19 +91,19 @@
 			<ul id="menu">
 				<li><a href="existingTask"><i class="glyphicon glyphicon-home"></i><span>Home</span></a></li>
 				<li id="menu-academico"><a href="#"><i
-						class="glyphicon glyphicon-pencil"></i> <span>Task Manager</span>
+						class="glyphicon glyphicon-pencil"></i> <span>Reminders</span>
 						<span class="fa fa-angle-right" style="float: right"></span></a>
 					<ul id="menu-academico-sub">
 						<li id="menu-academico-avaliacoes"><a href="createTask">Create
 								New</a></li>
-						<li id="menu-academico-avaliacoes"><a href="products.html">Edit
+						<li id="menu-academico-avaliacoes"><a href="editExisting">Edit
 								Existing</a></li>
-						<li id="menu-academico-boletim"><a href="sunglasses.html">Delete
+						<li id="menu-academico-boletim"><a href="deleteExisting">Delete
 								Existing</a></li>
 					</ul></li>
-				<li id="menu-academico"><a href="sunglasses.html"><i
+				<li id="menu-academico"><a href="report"><i
 						class="glyphicon glyphicon-book"></i> <span>Report</span></a></li>
-				<li><a href="sweater.html"><i
+				<li><a href="settings"><i
 						class="glyphicon glyphicon-cog"></i> <span>Settings</span></a></li>
 
 
@@ -135,35 +141,57 @@
 	<script src="resources/js/scripts.js"></script>
 
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	
-	<h1 align="center"><b><u>TASKS</u></b></h1>
-<c:if test="${!empty taskList}">
-		<table border="1" align="center">
-			<tr>
-				<th> ID</th>
-				<th> TASK TITLE</th>
-				<th> DESCRIPTION</th>
-				<th> STATUS</th>
-				<th> DELETE</th>
-				<th> UPDATE</th>
-			</tr>
+	<div class="page-container">
+	<!--/content-inner-->
+		<div class="left-content">
+			<div class="inner-content">
+		<div class="container">
+		<div class="monthly-grid">
+  <h2>Reminder List</h2>
+  <p>Following are the reminders : </p>   
+           
+  <table class="footable" data-page-size="4">
 
-			<c:forEach items="${taskList }" var="task">
-				<tr>
-					<td>${task.task_Id}</td>
+   
+    <thead>
+    <c:if test="${!empty taskList}">
+      <tr>
+        
+				<th> TITLE</th>
+				<th> DESCRIPTION</th>
+				
+				
+      </tr>
+    </thead>
+    <tbody>
+    <tfoot class="hide-if-no-paging">
+    <tr>
+    	<td colspan="20">
+    	<ul class="pagination"></ul>
+    	</td>
+    </tr>
+    </tfoot>
+    <c:forEach items="${taskList }" var="task">
+      <tr>
+        
 					<td>${task.title}</td>
 					<td>${task.description}</td>
-					<td>${task.status}</td>
-					<td> <a href="<c:url value='task/delete/${task.task_Id}' />">Delete</a></td>
-					<td> <a href="<c:url value='task/update/${task.task_Id}' />">Update</a></td>
-					</tr>
-			</c:forEach>
-		</table>
-	</c:if>
-	
+					
+					
+      </tr>
+      </c:forEach>
+    </tbody>
+  </table>
+  </c:if>
+</div>
+	</div></div></div></div>
 </body>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('.footable').footable();
+	});
+
+</script>
 </html>

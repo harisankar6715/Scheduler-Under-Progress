@@ -113,7 +113,7 @@ public class HomeController {
 	@RequestMapping(value = "/task/delete/{task_Id}")
 	public String deleteTask(@PathVariable("task_Id") int task_Id, ModelMap model) {
 		taskDAO.delete(task_Id);;
-		return "redirect:/existingTask";
+		return "redirect:/deleteExisting";
 	}
 	@RequestMapping(value = "task/update/{task_Id}")
 	public String  updateTask(@PathVariable("task_Id") int task_Id,@ModelAttribute("task") Task t) {
@@ -132,4 +132,27 @@ public class HomeController {
 		taskDAO.saveOrUpdate(task);
 		return "redirect:/existingTask";
 	}
+	@RequestMapping("/report")
+	public ModelAndView report(@ModelAttribute("task") Task t) {
+
+		ModelAndView mv = new ModelAndView("/report");
+		mv.addObject("isreport", "true");
+		mv.addObject("taskList", this.taskDAO.list());
+		return mv;
+	} 
+	@RequestMapping("/contacts")
+	public ModelAndView contacts() {
+		ModelAndView mv = new ModelAndView("/contacts");
+		mv.addObject("iscontacts", "true");
+		return mv;
+	}
+	@RequestMapping("/deleteExisting")
+	public ModelAndView deleteExisting(@ModelAttribute("task") Task t) {
+
+		ModelAndView mv = new ModelAndView("/deleteExisting");
+		mv.addObject("isdeleteExisting", "true");
+		mv.addObject("taskList", this.taskDAO.list());
+		return mv;
+	} 
 }
+

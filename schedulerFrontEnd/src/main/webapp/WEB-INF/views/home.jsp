@@ -89,7 +89,7 @@ body {
 				<ul class="nav navbar-nav">
 					<li><a href="#section1">Home</a></li>
 					<li><a href="#section2">About</a></li>
-					<li><a href="#section3">Contact</a></li>
+					<li><a href="contacts">Contact</a></li>
 					<li><a href="#section4">Footer</a></li>
 					<li><a href="loginhere">LogIn</a></li>
 					<li><a href="register">SignUp</a></li>

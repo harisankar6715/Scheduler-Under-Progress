@@ -51,7 +51,7 @@
 							<div class="top_right">
 								<ul>
 
-									<li><a href="contact.html"><span
+									<li><a href="contacts"><span
 											class="glyphicon glyphicon-envelope"> Contacts</span></a></li>|
 									<li><a><span class="glyphicon glyphicon-phone-alt">
 												91-90727-00085</span></a></li>
@@ -85,19 +85,19 @@
 			<ul id="menu">
 				<li><a href="existingTask"><i class="glyphicon glyphicon-home"></i><span>Home</span></a></li>
 				<li id="menu-academico"><a href="#"><i
-						class="glyphicon glyphicon-pencil"></i> <span>Task Manager</span>
+						class="glyphicon glyphicon-pencil"></i> <span>Reminders</span>
 						<span class="fa fa-angle-right" style="float: right"></span></a>
 					<ul id="menu-academico-sub">
 						<li id="menu-academico-avaliacoes"><a href="createTask">Create
 								New</a></li>
-						<li id="menu-academico-avaliacoes"><a href="products.html">Edit
+						<li id="menu-academico-avaliacoes"><a href="editExisting">Edit
 								Existing</a></li>
-						<li id="menu-academico-boletim"><a href="sunglasses.html">Delete
+						<li id="menu-academico-boletim"><a href="deleteExisting">Delete
 								Existing</a></li>
 					</ul></li>
-				<li id="menu-academico"><a href="sunglasses.html"><i
+				<li id="menu-academico"><a href="report"><i
 						class="glyphicon glyphicon-book"></i> <span>Report</span></a></li>
-				<li><a href="sweater.html"><i
+				<li><a href="settings"><i
 						class="glyphicon glyphicon-cog"></i> <span>Settings</span></a></li>
 
 

@@ -1,5 +1,7 @@
 package com.calcus.scheduler.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,7 @@ public class Task {
 	private String Description;
 	private String Status; 
 	private String Users_Id;
+	//private Date Expiry;
 	@ManyToOne
 	@JoinColumn(name="Users_Id" , nullable = false, updatable = false, insertable = false)
 	private Users users;
@@ -62,6 +65,12 @@ public class Task {
 	public void setUsers(Users users) {
 		this.users = users;
 	}
+//	public Date getExpiry() {
+//		return Expiry;
+//	}
+//	public void setExpiry(Date expiry) {
+//		Expiry = expiry;
+//	}
 	
 	
 	
